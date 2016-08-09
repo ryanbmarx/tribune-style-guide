@@ -1,0 +1,12 @@
+@mixin sans-serif-text($font-size, $line-height){
+	font-family:'Arial', sans-serif;
+	line-height:$line-height;
+	font-size:$font-size;
+}
+
+
+@mixin serif-text($font-size, $line-height){
+	font-family:'Georgia', serif;
+	line-height:$line-height;
+	font-size:$font-size;
+}

@@ -1,0 +1,15 @@
+.trb-table{
+	@include trb-table();
+}
+
+.trb-table--zebra{
+	@include trb-table--zebra($highlight-color);
+}
+
+.trb-table--compressed{
+	@include trb-table--compressed();
+}
+
+.trb-table--responsive{
+	@include trb-table--responsive();
+}

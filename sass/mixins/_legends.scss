@@ -1,0 +1,75 @@
+// This variable defines the width of squares and circles
+// $legend_dt_width: 10px;
+
+@mixin legend_stacked($legend_dt_width){
+	dt {
+		float:left;
+		clear:left;
+		width:$legend_dt_width;
+		margin-left: 0;
+	}
+	dd {
+		@include clearfix();
+		float:none;
+		margin:0 0 0 ($legend_dt_width + 5px);
+		padding:0 0 5px;
+	}
+}
+
+
+@mixin legend_inline($legend_dt_width){
+	dt{
+		float:left;
+		clear:none;
+		margin-left:10px;
+
+		&:first-child{
+			margin-left:0;
+		}
+
+	}
+	dd{
+		float:left;
+		margin-left: 5px;
+		whitespace:nowrap;
+	}
+	@media (max-width: 700px){
+		@include legend_stacked($legend_dt_width);
+	}
+
+}
+@mixin legend($orientation, $legend_dt_width){
+	padding:0;
+	margin:0;
+	
+	// This <dl> styling is copied from the bulletboxes, but 
+	// the widths are modified to accomadate the dots
+
+
+	@if $orientation == 'inline'{
+		@include legend_inline($legend_dt_width);
+	} @else {
+		@include legend_stacked($legend_dt_width);
+	}
+}
+@mixin legend__box($shape:'circle'){
+	// These are the colored dots to go in the legends
+	// It will default to a circle, unless specifically 
+	// told to be square or a line segment
+
+	display:inline-block;
+	background-color:#000;
+	margin:0;
+	height:$legend_dt_width;
+	width:$legend_dt_width;
+	border-radius:50%;
+
+	@if $shape == 'square' {
+		border-radius:0;
+		} @else if $shape == 'line'{
+			width:13px;
+			height:5px; 
+			border-radius:27%;
+			margin-bottom:.2em;
+		}
+}

@@ -1,0 +1,71 @@
+
+@mixin bulletbox_ul(){
+	// For when you want some blobs of text
+	list-style:none;
+	margin:0;
+	padding:0;
+
+	li{
+		padding:15px 0;
+		border-bottom:1px solid #aaa;
+	}
+	li:before{
+		content:none
+	}
+}
+
+@mixin bulletbox_dl(){
+	// For when this is mostly a by-the-numbers type excercise
+	padding:15px 0;
+	
+	dt{
+		float:left;
+		clear:left;
+		width:100px;
+		text-align:right;
+		font-weight:700;
+	}
+
+	dd{
+		@extend %clearfix;
+		margin:0 0 0 110px;
+		padding:0 0 5px;
+	}
+}
+
+@mixin bulletbox{
+	// This is some basic styling for all bulletboxes
+	margin:15px 0;
+	padding:0;
+	border-bottom:2px solid $trib_dark_blue;
+
+	ul {
+		@include bulletbox_ul();
+	}
+
+	dl {
+		@include bulletbox_dl();
+	}
+}
+
+
+@mixin zebra_stripes($color){
+	ul{
+		li{
+			padding:15px 10px;
+			border:none;
+		}
+		li:nth-child(odd){
+			background:$color;
+		}
+	}	
+}
+
+@mixin bulletbox__label(){
+	// Is this a header?
+	color:#fff;
+	font-weight:700;
+	background-color:$trib_dark_blue;
+	padding:10px 15px;
+	margin:0;
+}

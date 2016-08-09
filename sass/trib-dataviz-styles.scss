@@ -1,0 +1,73 @@
+@import 'variables';
+@import 'mixins';
+
+@import 'typography';
+@import 'bulletbox';
+@import 'legends';
+@import 'tables';
+@import 'utilities';
+@import 'buttons';
+
+// @import 'foundation';
+
+// @include foundation-button;
+// @include foundation-button-group;
+
+
+// TESTING BULLETBOXES WITH ZEBRAS
+.tips-box--zebra{
+	@include bulletbox;
+	@include zebra_stripes($highlight_color);
+	p{
+		@include bulletbox__label;
+	}
+}
+
+.tips-box--no-zebra{
+	@include bulletbox;
+	p{
+		@include bulletbox__label;
+	}
+}
+
+.tips-box--dl{
+	@include bulletbox();
+	p{
+		@include bulletbox__label;
+	}
+}
+
+// TESTING LEGENDS
+
+.map-key{
+	@include legend('stacked',10px);
+	span{
+		@include legend__box('square');
+	}
+}
+
+.map-key--inline{
+	@include legend('inline',10px);
+	span{
+		@include legend__box('line');
+	}
+}
+
+// Testing tables
+.points-scored{
+	@include trb-table();
+}
+
+.points-scored--zebra{
+	@include trb-table();
+	@include trb-table--zebra($highlight_color);
+}
+
+.points-scored--compressed{
+	@include trb-table();
+	@include trb-table--compressed();
+}
+.points-scored--responsive{
+	@include trb-table();
+	@include trb-table--responsive();
+}

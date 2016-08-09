@@ -1,0 +1,12 @@
+.photo-wrapper{
+	@include photo-wrapper();
+	
+	figcaption{
+		@include photo-wrapper__caption();
+	}
+	&.photo-wrapper--mugshot{
+		@include photo-wrapper--mugshot();
+	}
+
+}
+

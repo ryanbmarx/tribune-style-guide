@@ -1,0 +1,20 @@
+/** HORIZONTAL BAR CHARTS */
+.bar-wrapper{
+	.bar {
+		height:20px;
+		background-color: #144a7c;
+		float:left;
+		text-align: right;
+	}
+	small{
+		padding: 3px 10px 0 0;
+		color:#fff;
+		font-weight: bold;
+		float:right;
+	}
+	& > small {
+		color:#000;
+		float:left;
+		padding:3px 0 0 5px;
+	}
+}

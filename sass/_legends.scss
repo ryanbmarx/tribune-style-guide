@@ -1,0 +1,19 @@
+.legend__box{
+	@include legend__box('circle');
+}
+
+.legend__box--line{
+	@include legend__box('line');
+}
+.legend__box--square{
+	@include legend__box('square');
+}
+
+.legend{
+	@include legend('stacked', $legend_dt_width);
+}
+
+.legend--inline{
+	@include legend('inline', $legend_dt_width);
+}
+

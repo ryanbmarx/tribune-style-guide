@@ -1,0 +1,31 @@
+@mixin clearfix(){
+	&:before{
+		content:" ";
+		display:table
+	}
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin responsive_embed($width:16, $height:9, $padding_top:0){
+	// the idea here is someone can call the responsive embed by putting the ratios in the mixin.
+	// the default is 16x9
+
+	$ratio: percentage($height/$width);
+
+	position: relative;
+	padding-bottom: $ratio;
+	padding-top: $padding_top;
+	height: 0;
+	
+	iframe{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
