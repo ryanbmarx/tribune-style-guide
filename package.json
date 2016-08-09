@@ -1,0 +1,40 @@
+{
+  "name": "trib-styles",
+  "version": "0.0.1",
+  "description": "Base style and css/sass utilities for the Chicago Tribune data team.",
+  "main": "trib-dataviz-styles.scss",
+  "repository" :
+  { 
+    "type" : "git",
+    "url" : "git@tribune.unfuddle.com:tribune/trib-styles.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "styles",
+    "stylesheet",
+    "Chicago",
+    "Tribune"
+  ],
+  "author": "Ryan Marx",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "foundation-sites": "^6.2.3",
+    "node-sass": "^3.8.0",
+    "onchange": "^2.5.0",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.5.2"
+  },
+  "scripts": {
+    "scss": "mkdir -p css && node-sass --include-path node_modules/foundation-sites/scss --source-map true --output-style compressed  --output css sass/trib-dataviz-styles.scss",
+    "autoprefixer": "postcss -u autoprefixer -r css/*.css",
+    "build:css": "npm run scss && npm run autoprefixer && osascript -e 'display notification \"Notification text\" with title \"CSS compiled\"'",
+    "build": "npm run build:css",
+    "watch:css": "onchange 'sass/*.scss' 'sass/mixins/*.scss' -- npm run build:css",
+    "watch": "parallelshell 'npm run watch:css'"
+  }
+}
