@@ -1,4 +1,4 @@
-.label1, .label2, .label3, .label4, .label5, .label6{
+.label1, .label2, .label3, .label4, .label5, .label6, .label7{
 	margin:0;
 	font-weight:bold;
 }
@@ -31,6 +31,7 @@ h6, .label6{
 .label7{
 	// This is the bold leadin style for sans-serif ... just two clicks larger than base sans text
 	@include sans-serif-text(17px, 1.5em);
+	font-weight:bold;
 }
 
 
@@ -49,4 +50,6 @@ h6, .label6{
 .trb_mainContent p.agate, p.agate, .agate{
 	// Standard sans-serif
 	@include sans-serif-text(12px, 1.3em);
+	margin: 0 0 15px 0;
+
 }
