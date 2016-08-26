@@ -7,7 +7,7 @@ This is the base-styles node package for the Chicago Tribune DataViz team. It re
 How do I install this?
 ----------------------
 
-Not sure yet. Check back when I know more.
+At the moment, you can use `npm install git+https://tribune.unfuddle.com/git/tribune_trib-styles/`. Don't forget to `--save-dev` to add it to your package.json.
 
 
 Shouldn't this readme be longer?
