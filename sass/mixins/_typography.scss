@@ -2,6 +2,8 @@
 	font-family:'Arial', sans-serif;
 	line-height:$line-height;
 	font-size:$font-size;
+	// NGUX, at some widths, forces paragraph text to 80% width.
+	width:auto;
 }
 
 
@@ -9,4 +11,7 @@
 	font-family:'Georgia', serif;
 	line-height:$line-height;
 	font-size:$font-size;
+	color:#333;
+	// NGUX, at some widths, forces paragraph text to 80% width.
+	width:auto;
 }

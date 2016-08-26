@@ -37,7 +37,7 @@
 	// This is some basic styling for all bulletboxes
 	margin:15px 0;
 	padding:0;
-	border-bottom:2px solid $trib_dark_blue;
+	border-bottom:2px solid $trib_blue1;
 
 	ul {
 		@include bulletbox_ul();
@@ -65,7 +65,7 @@
 	// Is this a header?
 	color:#fff;
 	font-weight:700;
-	background-color:$trib_dark_blue;
+	background-color:$trib_blue1;
 	padding:10px 15px;
 	margin:0;
 }

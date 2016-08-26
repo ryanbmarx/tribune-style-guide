@@ -1,0 +1,52 @@
+.label1, .label2, .label3, .label4, .label5, .label6{
+	margin:0;
+	font-weight:bold;
+}
+
+h1, .label1{
+	@include serif-text(60px, 1.5em);	
+}
+
+h2, .label2{
+	@include serif-text(45px, 1.5em);
+}
+
+h3, .label3{
+	@include serif-text(35px, 1.5em);
+}
+
+h4, .label4{
+	@include serif-text(30px, 1.5em);
+}
+
+h5, .label5{
+	@include serif-text(25px, 1.5em);
+}
+
+h6, .label6{
+	// This is the bold leadin style ... just two clicks larger than base <p> text
+	@include sans-serif-text(20px, 1.5em);
+}
+
+.label7{
+	// This is the bold leadin style for sans-serif ... just two clicks larger than base sans text
+	@include sans-serif-text(17px, 1.5em);
+}
+
+
+.trb_mainContent p, p{
+	// Serif text. Base style. Pretty close to NGUX
+	@include serif-text(18px, 27px);
+	margin: 0 0 25px 0;
+}
+
+.trb_mainContent p.sans-serif, p.sans-serif, .sans-serif{
+	// Standard sans-serif
+	@include sans-serif-text(15px, 1.3em);
+	margin: 0 0 25px 0;
+}
+
+.trb_mainContent p.agate, p.agate, .agate{
+	// Standard sans-serif
+	@include sans-serif-text(12px, 1.3em);
+}
