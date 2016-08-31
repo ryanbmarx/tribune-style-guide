@@ -1,8 +1,8 @@
 // Start with vars, which are used to configure things throughout.
-@import 'variables';
+@import 'base-variables';
 
 // Then the mixins. Which are used to build the classes, styles and components.
-@import 'mixins';
+@import 'base-mixins';
 
 // Then the classes.
 @import 'typography';
