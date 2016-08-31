@@ -5,7 +5,7 @@
   "main": "trib-dataviz-styles.scss",
   "repository": {
     "type": "git",
-    "url": "git@tribune.unfuddle.com:tribune/trib-styles.git"
+    "url": "https://tribune.unfuddle.com/git/tribune_trib-styles/"
   },
   "scripts": {
     "scss": "mkdir -p css && node-sass --include-path node_modules/foundation-sites/scss --source-map true --output-style compressed  --output css sass/trib-dataviz-styles.scss",
@@ -13,7 +13,8 @@
     "build:css": "npm run scss && npm run autoprefixer && osascript -e 'display notification \"Notification text\" with title \"CSS compiled\"'",
     "build": "npm run build:css",
     "watch:css": "onchange 'sass/*.scss' 'sass/mixins/*.scss' -- npm run build:css",
-    "watch": "parallelshell 'npm run watch:css'"
+    "watch": "parallelshell 'npm run watch:css'",
+    "postinstall":"npm install"
   },
   "keywords": [
     "sass",
