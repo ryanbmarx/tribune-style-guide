@@ -14,7 +14,7 @@
     "build": "npm run build:css",
     "watch:css": "onchange 'sass/*.scss' 'sass/mixins/*.scss' -- npm run build:css",
     "watch": "parallelshell 'npm run watch:css'",
-    "postinstall":"npm install foundation-sites"
+    "postinstall":"npm install foundation-sites && npm install skeleton-scss"
   },
   "keywords": [
     "sass",
