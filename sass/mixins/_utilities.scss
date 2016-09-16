@@ -29,3 +29,17 @@
 		height: 100%;
 	}
 }
+
+@mixin trib_image(){
+	
+	margin:0 0 15px 0;
+
+	img{
+		width:100%;
+		margin:0 0 7px 0;
+	}
+
+	figcaption{
+		@include sans-serif-text(12px, 1.3em, normal)
+	}
+}
