@@ -5,9 +5,6 @@
 // #######  COLORS
 // #####################
 
-
-
-
 $trib_gray1:#888;
 $trib_grey1:$trib_gray1;
 $trib_gray2:#aaa;
@@ -50,6 +47,13 @@ $packers_gold: #FFB612;
 
 // DEFAULT COLOR CHOICES
 $highlight_color:$trib_blue4;
+
+// #####################
+// #######  FONTS 
+// #####################
+
+$fonts-sans-serif: 'Arial', sans-serif;
+$fonts-serif: "Georgia", serif;
 
 // #####################
 // #######  CONFIGURE BREAKPOINTS
