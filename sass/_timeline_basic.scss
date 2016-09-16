@@ -1,0 +1,12 @@
+.timeline{
+	@include timeline();	
+}
+
+.event{
+	@include event($trib_gray3);
+}
+
+.event--highlight{
+	@include event--highlight($trib_blue3);
+}
+
