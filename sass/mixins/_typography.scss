@@ -1,17 +1,21 @@
-@mixin sans-serif-text($font-size, $line-height){
-	font-family:'Arial', sans-serif;
+@mixin sans-serif-text($font-size, $line-height, $weight:normal){
+	font-family:$fonts-sans-serif;
 	line-height:$line-height;
 	font-size:$font-size;
+	font-weight:$weight;
 	// NGUX, at some widths, forces paragraph text to 80% width.
 	width:auto;
+
 }
 
 
-@mixin serif-text($font-size, $line-height){
-	font-family:'Georgia', serif;
+@mixin serif-text($font-size, $line-height, $weight:normal){
+	font-family:$fonts-serif;
 	line-height:$line-height;
 	font-size:$font-size;
 	color:#333;
+	font-weight:$weight;
+
 	// NGUX, at some widths, forces paragraph text to 80% width.
 	width:auto;
 }
