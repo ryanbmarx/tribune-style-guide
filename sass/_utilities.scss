@@ -14,7 +14,9 @@
   @include responsive_embed(16,9,25px);
 }
 
-
+hr{
+	@include horiz_rule();
+}
 
 
 // Basic <figure> for image + caption.

@@ -43,3 +43,10 @@
 		@include sans-serif-text(12px, 1.3em, normal)
 	}
 }
+
+@mixin horiz_rule(){
+	border: 0;
+	height: 1px;
+	background:$trib_gray4;
+	margin:25px 0;
+}
