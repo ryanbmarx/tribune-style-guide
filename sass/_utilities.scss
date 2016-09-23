@@ -11,7 +11,7 @@
 .show-phone{height:0;visibility:hidden;}
 
 .embed_16x9{
-  @include responsive_embed(16,9,25px);
+  @include responsive_embed(16,9,0);
 }
 
 hr{
