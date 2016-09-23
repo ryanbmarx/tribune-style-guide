@@ -19,3 +19,32 @@
 	// NGUX, at some widths, forces paragraph text to 80% width.
 	width:auto;
 }
+
+
+// These are convenience mixins for the various label styles.
+
+@mixin label1(){
+	@include serif-text(55px, 1.5em, bold);
+
+}
+@mixin label2(){
+	@include serif-text(45px, 1.5em, bold);
+
+}
+@mixin label3(){
+	@include serif-text(35px, 1.5em, bold);
+}
+@mixin label4(){
+	@include serif-text(30px, 1.5em, bold);
+
+}
+@mixin label5(){
+	@include serif-text(25px, 1.5em, bold);
+}
+@mixin label6(){
+	@include serif-text(20px, 1.5em, bold);
+
+}
+@mixin label7(){
+	@include sans-serif-text(17px, 1.5em, bold);
+}

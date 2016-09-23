@@ -8,33 +8,32 @@
 // to accomadate these use cases.
 
 .trib-image figcaption.label1, .label1{
-	@include serif-text(55px, 1.5em, bold);	
+	@include label1();	
 }
 
 .trib-image figcaption.label2, .label2{
-	@include serif-text(45px, 1.5em, bold);
+	@include label2();
 }
 
 .trib-image figcaption.label3, .label3{
-	@include serif-text(35px, 1.5em, bold);
+	@include label3();
 }
 
 .trib-image figcaption.label4, .label4{
-	@include serif-text(30px, 1.5em, bold);
+	@include label4();
 }
 .trib-image figcaption.label5, .label5{
-	@include serif-text(25px, 1.5em, bold);
+	@include label5();
 }
 
 .trib-image figcaption.label6, .label6{
 	// This is the bold leadin style ... just two clicks larger than base <p> text
-	@include sans-serif-text(20px, 1.5em, bold);
+	@include label6();
 }
 
 .trib-image figcaption.label7, .label7{
 	// This is the bold leadin style for sans-serif ... just two clicks larger than base sans text
-	@include sans-serif-text(17px, 1.5em, bold);
-	font-weight:bold;
+	@include label7();
 }
 
 
@@ -59,4 +58,5 @@
 
 .trb_mainContent ol, ol, .trb_mainContent ul, ul{
 	@include serif-text(18px, 27px);
+	margin-bottom:25px;
 }
