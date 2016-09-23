@@ -3,32 +3,35 @@
 	font-weight:bold;
 }
 
-.label1{
+// Sometimes we will want to use these styles on figcaptions (such as graphic labels), but the 
+// current figure styling will clobber these styles. So I've added the figcaptions here
+// to accomadate these use cases.
+
+.trib-image figcaption.label1, .label1{
 	@include serif-text(55px, 1.5em, bold);	
 }
 
-.label2{
+.trib-image figcaption.label2, .label2{
 	@include serif-text(45px, 1.5em, bold);
 }
 
-.label3{
+.trib-image figcaption.label3, .label3{
 	@include serif-text(35px, 1.5em, bold);
 }
 
-.label4{
+.trib-image figcaption.label4, .label4{
 	@include serif-text(30px, 1.5em, bold);
 }
-
-.label5{
+.trib-image figcaption.label5, .label5{
 	@include serif-text(25px, 1.5em, bold);
 }
 
-.label6{
+.trib-image figcaption.label6, .label6{
 	// This is the bold leadin style ... just two clicks larger than base <p> text
 	@include sans-serif-text(20px, 1.5em, bold);
 }
 
-.label7{
+.trib-image figcaption.label7, .label7{
 	// This is the bold leadin style for sans-serif ... just two clicks larger than base sans text
 	@include sans-serif-text(17px, 1.5em, bold);
 	font-weight:bold;
