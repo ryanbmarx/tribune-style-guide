@@ -1,0 +1,15 @@
+.trib-table{
+	@include trib-table();
+}
+
+.trib-table--zebra{
+	@include trib-table--zebra($highlight-color);
+}
+
+.trib-table--compressed{
+	@include trib-table--compressed();
+}
+
+.trib-table--responsive{
+	@include trib-table--responsive();
+}

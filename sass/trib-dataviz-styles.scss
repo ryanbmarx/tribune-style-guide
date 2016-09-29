@@ -8,12 +8,13 @@
 @import 'typography';
 @import 'bulletbox';
 @import 'legends';
-@import 'tables';
+@import 'trib-tables';
 @import 'utilities';
 @import 'buttons';
 @import 'skeleton';
 @import 'timeline_basic';
 @import 'utilities';
+@import 'ngux_visibility_toggles';
 
 
 // @import 'foundation';
@@ -21,7 +22,7 @@
 // @include foundation-button;
 // @include foundation-button-group;
 
-
+/*
 // TESTING BULLETBOXES WITH ZEBRAS
 .tips-box--zebra{
 	@include bulletbox;
@@ -63,19 +64,19 @@
 
 // Testing tables
 .points-scored{
-	@include trb-table();
+	@include trib-table();
 }
 
 .points-scored--zebra{
-	@include trb-table();
-	@include trb-table--zebra($highlight_color);
+	@include trib-table();
+	@include trib-table--zebra($highlight_color);
 }
 
 .points-scored--compressed{
-	@include trb-table();
-	@include trb-table--compressed();
+	@include trib-table();
+	@include trib-table--compressed();
 }
 .points-scored--responsive{
-	@include trb-table();
-	@include trb-table--responsive();
-}
+	@include trib-table();
+	@include trib-table--responsive();
+}*/

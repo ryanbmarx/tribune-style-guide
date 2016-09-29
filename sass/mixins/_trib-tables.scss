@@ -1,6 +1,6 @@
-@mixin trb-table(){
+@mixin trib-table(){
 	width:100%;
-	margin:15px 0;
+	margin:0 0 25px 0;
 	border-collapse:collapse;
 
 	thead {
@@ -36,7 +36,7 @@
 
 }
 
-@mixin trb-table--compressed{
+@mixin trib-table--compressed{
 	@media all and (min-width:($breakpoint-mobile + 1)){
 		thead{
 			background-color: transparent;
@@ -66,7 +66,7 @@
 		}
 	}
 }
-@mixin trb-table--zebra($color){
+@mixin trib-table--zebra($color){
 	td{
 		padding:10px 7px
 	}
@@ -77,7 +77,7 @@
 	}
 }
 
-@mixin trb-table--responsive{
+@mixin trib-table--responsive{
 	@media all and (max-width:$breakpoint-mobile){
 		display:block;
 		width:100%;
