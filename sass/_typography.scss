@@ -45,13 +45,13 @@
 
 .trb_mainContent p.sans-serif, p.sans-serif, .sans-serif{
 	// Standard sans-serif
-	@include sans-serif-text(15px, 1.3em);
+	@include sans-serif-text(16px, 1.4em);
 	margin: 0 0 25px 0;
 }
 
 .trb_mainContent p.agate, p.agate, .agate{
 	// Standard sans-serif
-	@include sans-serif-text(12px, 1.3em);
+	@include sans-serif-text(13px, 1.3em);
 	margin: 0 0 15px 0;
 
 }
