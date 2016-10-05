@@ -42,9 +42,17 @@
 	@include serif-text(25px, 1.3em, bold);
 }
 @mixin label6(){
-	@include sans-serif-text(23px, 1.3em, bold);
+	@include sans-serif-text(20px, 1.3em, bold);
+
+	@media all and (min-width:501px){
+		@include sans-serif-text(23px, 1.3em, bold);
+	}
 
 }
 @mixin label7(){
-	@include sans-serif-text(19px, 1.4em, bold);
+	@include sans-serif-text(18px, 1.4em, bold);
+	
+	@media all and (min-width:501px){
+		@include sans-serif-text(19px, 1.4em, bold);
+	}
 }
