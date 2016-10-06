@@ -1,19 +1,28 @@
-.legend__box{
-	@include legend__box('circle');
-}
 
-.legend__box--line{
-	@include legend__box('line');
-}
-.legend__box--square{
-	@include legend__box('square');
-}
+.trib-legend{
+	@include trib_legend();
 
-.legend{
-	@include legend('stacked', $legend_dt_width);
-}
+	&--stacked{
+		@include trib_legend--stacked();
+	}
 
-.legend--inline{
-	@include legend('inline', $legend_dt_width);
-}
+	&--inline{
+		@include trib_legend--inline();
+	}
 
+	&__line{
+		@include trib_legend__box('line');
+	}
+	
+	&__box{
+		@include trib_legend__box(0);
+	}
+	
+	&__rounded{
+		@include trib_legend__box(5px);
+	}
+
+	&__circle{
+		@include trib_legend__box('circle');
+	}
+}

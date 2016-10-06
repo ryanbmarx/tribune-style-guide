@@ -1,75 +1,77 @@
-// This variable defines the width of squares and circles
-// $legend_dt_width: 10px;
+$dot_dimension:11px;
+@mixin trib_legend--inline(){
+	// Include this for all the dt/dd pairs to be on a single, wrapping line
 
-@mixin legend_stacked($legend_dt_width){
-	dt {
-		float:left;
-		clear:left;
-		width:$legend_dt_width;
-		margin-left: 0;
+	dd, dt{
+		display: inline;
 	}
-	dd {
-		@include clearfix();
-		float:none;
-		margin:0 0 0 ($legend_dt_width + 5px);
-		padding:0 0 5px;
+
+	dd{
+		margin-left:0;
 	}
-}
 
-
-@mixin legend_inline($legend_dt_width){
 	dt{
-		float:left;
-		clear:none;
-		margin-left:10px;
-
+		margin-left:12px;
 		&:first-child{
 			margin-left:0;
 		}
-
 	}
-	dd{
+}
+
+@mixin trib_legend--stacked(){
+	// Include this for each dt/dd pair to be on it's own line
+	dt{
 		float:left;
-		margin-left: 5px;
-		whitespace:nowrap;
+		display: inline;
 	}
-	@media (max-width: 700px){
-		@include legend_stacked($legend_dt_width);
+
+	dd{
+		margin-left: $dot_dimension + 10px;
+
+		&:after{
+			content: '';
+			clear: both;
+			display: block;
+		}
+	}
+}
+
+
+@mixin trib_legend($shape:0){
+	// Base mixxin. Needed for all legends.
+
+	@include clearfix();
+
+	margin: 0 0 25px 0;
+
+	dd{
+		@include sans-serif-text(16px, 1.7em);
 	}
 
 }
-@mixin legend($orientation, $legend_dt_width){
-	padding:0;
-	margin:0;
-	
-	// This <dl> styling is copied from the bulletboxes, but 
-	// the widths are modified to accomadate the dots
 
 
-	@if $orientation == 'inline'{
-		@include legend_inline($legend_dt_width);
+@mixin trib_legend__box($shape){
+	// The mixin which makes the dots in a legend. 
+
+	$dot_height:$dot_dimension;
+	$dot_width:$dot_dimension;
+	$border_radius: 0;
+	$border:1px solid $trib_gray4;
+
+	@if $shape == 'circle'{
+		$border_radius: 50%;
+	} @else if $shape == 'line'{
+		$dot_height:5px;
+		$border_radius: 3px;
+		$border:none;
 	} @else {
-		@include legend_stacked($legend_dt_width);
+		$border_radius: $shape;
 	}
-}
-@mixin legend__box($shape:'circle'){
-	// These are the colored dots to go in the legends
-	// It will default to a circle, unless specifically 
-	// told to be square or a line segment
 
 	display:inline-block;
-	background-color:#000;
-	margin:0;
-	height:$legend_dt_width;
-	width:$legend_dt_width;
-	border-radius:50%;
-
-	@if $shape == 'square' {
-		border-radius:0;
-		} @else if $shape == 'line'{
-			width:13px;
-			height:5px; 
-			border-radius:27%;
-			margin-bottom:.2em;
-		}
+	border-radius:$border_radius;
+	height: $dot_height;
+	width: $dot_width;
+	border:$border;
 }
