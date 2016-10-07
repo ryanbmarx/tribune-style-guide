@@ -32,7 +32,7 @@
 
 @mixin trib_image($max_width:-1){
 
-	@if $max_width < 0{
+	@if $max_width < 0 {
 		$max_width:none;
 		$margin_left:0;
 		$margin_right:0;			
