@@ -30,8 +30,19 @@
 	}
 }
 
-@mixin trib_image(){
-	margin:0 0 15px 0;
+@mixin trib_image($max_width:-1){
+
+	@if $max_width < 0{
+		$max_width:none;
+		$margin_left:0;
+		$margin_right:0;			
+	} @else {
+		$margin_left:auto;
+		$margin_right:auto;
+	}
+
+	margin:0 $margin_right 25px $margin_left;
+	max-width:$max-width;
 
 	img{
 		width:100%;
@@ -41,6 +52,11 @@
 	figcaption{
 		@include sans-serif-text(12px, 1.3em, normal)
 	}
+}
+
+@mixin trib_chart(){
+	margin:0 0 25px 0;
+	padding:0;
 }
 
 @mixin horiz_rule(){
