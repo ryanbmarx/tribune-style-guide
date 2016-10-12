@@ -32,17 +32,13 @@
 
 @mixin trib_image($max_width:-1){
 
-	@if $max_width < 0 {
-		$max_width:none;
-		$margin_left:0;
-		$margin_right:0;			
-	} @else {
-		$margin_left:auto;
-		$margin_right:auto;
-	}
+	$margin_left: if($max_width<0, 0, auto);
+	$margin_right: if($max_width<0, 0, auto);
+	$calculated_max_width: if($max_width<=0, none, $max_width);
 
+	max-width:$calculated_max_width;
 	margin:0 $margin_right 25px $margin_left;
-	max-width:$max-width;
+	
 
 	img{
 		width:100%;
