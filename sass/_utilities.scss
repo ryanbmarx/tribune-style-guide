@@ -23,3 +23,8 @@ hr{
 .trib-image{
   @include trib_image();
 }
+
+// Basic <figure> for chart.
+.trib-image{
+  @include trib_chart();
+}
