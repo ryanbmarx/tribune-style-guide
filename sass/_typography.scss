@@ -7,34 +7,44 @@
 // current figure styling will clobber these styles. So I've added the figcaptions here
 // to accomadate these use cases.
 
-.trib-image figcaption.label1, .label1{
-	@include label1();	
+@for $i from 1 to 7{
+	.trb_mainContent .trib-image .label#{$i}, 
+	.trb_mainContent .trib-chart .label#{$i}, 
+	.trib-image .label#{$i}, 
+	.trib-chart .label#{$i}, 
+	.label#{$i}{
+		@include label#{$i}();
+	}
 }
+	
+// .trib-image figcaption.label1, .label1{
+// 	@include label1();	
+// }
 
-.trib-image figcaption.label2, .label2{
-	@include label2();
-}
+// .trib-image figcaption.label2, .label2{
+// 	@include label2();
+// }
 
-.trib-image figcaption.label3, .label3{
-	@include label3();
-}
+// .trib-image figcaption.label3, .label3{
+// 	@include label3();
+// }
 
-.trib-image figcaption.label4, .label4{
-	@include label4();
-}
-.trib-image figcaption.label5, .label5{
-	@include label5();
-}
+// .trib-image figcaption.label4, .label4{
+// 	@include label4();
+// }
+// .trib-image figcaption.label5, .label5{
+// 	@include label5();
+// }
 
-.trib-image figcaption.label6, .label6{
-	// This is the bold leadin style ... just two clicks larger than base <p> text
-	@include label6();
-}
+// .trib-image figcaption.label6, .label6{
+// 	// This is the bold leadin style ... just two clicks larger than base <p> text
+// 	@include label6();
+// }
 
-.trib-image figcaption.label7, .label7{
-	// This is the bold leadin style for sans-serif ... just two clicks larger than base sans text
-	@include label7();
-}
+// .trib-image figcaption.label7, .label7{
+// 	// This is the bold leadin style for sans-serif ... just two clicks larger than base sans text
+// 	@include label7();
+// }
 
 
 .trb_mainContent p, p{
