@@ -7,13 +7,25 @@
 // current figure styling will clobber these styles. So I've added the figcaptions here
 // to accomadate these use cases.
 
-@for $i from 1 to 7{
-	.trb_mainContent .trib-image .label#{$i}, 
+@for $i from 1 through 7{
+	
 	.trb_mainContent .trib-chart .label#{$i}, 
-	.trib-image .label#{$i}, 
 	.trib-chart .label#{$i}, 
 	.label#{$i}{
-		@include label#{$i}();
+		@if $i == 1{
+					@include label1;}
+		@else if $i == 2{
+					@include label2;}
+		@else if $i == 3{
+					@include label3;}
+		@else if $i == 4{
+					@include label4;}
+		@else if $i == 5{
+					@include label5;}
+		@else if $i == 6{
+					@include label6;}
+		@else if $i == 7{
+					@include label7;		}
 	}
 }
 	
