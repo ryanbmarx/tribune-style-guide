@@ -1,0 +1,14 @@
+@each $color, $hex in $color_map{
+
+	// For each of the colors above, outputs two classes
+	// .trib_blue1_bg, which gives a blue background
+	// .trib_blue1_text which will color text
+
+	.#{$color}_bg{
+		background: #{$hex}
+	}
+
+	.#{$color}_text{
+		color: #{$hex}
+	}
+}

@@ -6,78 +6,14 @@
 
 // Then the classes.
 @import 'trib-colors';
-@import 'typography';
-@import 'bulletbox';
+@import 'trib-typography';
+@import 'trib-bulletbox';
 @import 'trib-legends';
 @import 'trib-tables';
-@import 'utilities';
-@import 'buttons';
-@import 'skeleton';
-@import 'timeline_basic';
-@import 'utilities';
-@import 'ngux_visibility_toggles';
-
-
-// @import 'foundation';
-
-// @include foundation-button;
-// @include foundation-button-group;
-
-/*
-// TESTING BULLETBOXES WITH ZEBRAS
-.tips-box--zebra{
-	@include bulletbox;
-	@include zebra_stripes($highlight_color);
-	p{
-		@include bulletbox__label;
-	}
-}
-
-.tips-box--no-zebra{
-	@include bulletbox;
-	p{
-		@include bulletbox__label;
-	}
-}
-
-.tips-box--dl{
-	@include bulletbox();
-	p{
-		@include bulletbox__label;
-	}
-}
-
-// TESTING LEGENDS
-
-.map-key{
-	@include legend('stacked',10px);
-	span{
-		@include legend__box('square');
-	}
-}
-
-.map-key--inline{
-	@include legend('inline',10px);
-	span{
-		@include legend__box('line');
-	}
-}
-
-// Testing tables
-.points-scored{
-	@include trib-table();
-}
-
-.points-scored--zebra{
-	@include trib-table();
-	@include trib-table--zebra($highlight_color);
-}
-
-.points-scored--compressed{
-	@include trib-table();
-	@include trib-table--compressed();
-}
-.points-scored--responsive{
-	@include trib-table();
-	@include trib-table--responsive();
-}*/
+@import 'trib-images-charts';
+@import 'trib-utilities';
+@import 'trib-buttons';
+@import 'trib-skeleton';
+@import 'trib-timeline-basic';
+@import 'trib-utilities';
+@import 'ngux-visibility-toggles';

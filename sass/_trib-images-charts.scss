@@ -1,0 +1,9 @@
+// Basic <figure> for image + caption.
+.trib-image{
+  @include trib_image();
+}
+
+// Basic <figure> for chart.
+.trib-chart{
+  @include trib_chart();
+}
