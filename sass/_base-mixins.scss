@@ -1,10 +1,10 @@
 // @import 'foundation'; 
 @import '../node_modules/foundation-sites/scss/foundation.scss'; // This handles all foundation mixins
-@import 'mixins/typography';
-@import 'mixins/photos';
+@import 'mixins/trib-typography';
+@import 'mixins/trib-photos';
 @import 'mixins/trib-legends';
-@import 'mixins/bulletbox';
+@import 'mixins/trib-bulletbox';
 @import 'mixins/trib-tables';
 @import 'mixins/trib-images-charts';
-@import 'mixins/utilities';
-@import 'mixins/timeline_basic';
+@import 'mixins/trib-utilities';
+@import 'mixins/trib-timeline-basic';
