@@ -4,14 +4,20 @@ $dot_dimension:11px;
 
 	dd, dt{
 		display: inline;
+		float:none;
 	}
 
 	dd{
 		margin-left:0;
+
+		&:after{
+			content:none;
+		}
 	}
 
 	dt{
 		margin-left:12px;
+		
 		&:first-child{
 			margin-left:0;
 		}
@@ -37,9 +43,9 @@ $dot_dimension:11px;
 }
 
 
-@mixin trib_legend($shape:0){
+@mixin trib_legend(){
 	// Base mixxin. Needed for all legends.
-
+	@include trib_legend--stacked();
 	@include clearfix();
 
 	margin: 0 0 25px 0;
