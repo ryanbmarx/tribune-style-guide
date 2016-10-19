@@ -1,0 +1,20 @@
+@mixin photo-wrapper(){
+// This is intended for the wrapper of a photo and it's caption
+overflow:hidden;
+img{
+	width:100%;
+}
+}
+
+@mixin photo-wrapper__caption(){
+	margin-top: 5px;
+	@include sans-serif-text(12px);
+
+}
+
+@mixin photo-wrapper--mugshot($float, $width, $margin-left:0, $margin-right:0){
+	float:$float;
+	width:$width;
+	margin-left:$margin-left;
+	margin-right:$margin-right;
+}
