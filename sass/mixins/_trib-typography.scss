@@ -60,3 +60,7 @@
 @mixin sans-serif(){
 	@include sans-serif-text(16px, 1.4em);
 }
+
+@mixin agate(){
+	@include sans-serif-text(12px, 1.3em);
+}
