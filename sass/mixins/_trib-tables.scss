@@ -1,12 +1,14 @@
-@mixin trib-table(){
+@mixin trib-table($type:standard){
+
+	// *************
+	// First the common elements
+	// *************
+
 	width:100%;
 	margin:0 0 25px 0;
 	border-collapse:collapse;
 
 	thead {
-		// background-color:$trib_blue1;
-		background-color: transparent;
-		border-bottom: 2px solid black;
 		padding-bottom: 5px;
 	}
 
@@ -21,91 +23,91 @@
 	}
 
 	td, th{
-		@include sans-serif-text(16px, 1.4em);
-
-	}
-
-	td{
 		padding:7px 3px;
-
-		&:first-child{
-			padding-left:0;
-		}
-
-		&:last-child{
-			padding-right:0;
-		}
+		&:first-child{padding-left:0;}
+		&:last-child{padding-right:0;}
 	}
+
 	th{
 		padding: 0 3px 3px 3px;
 		font-weight: bold;
 		text-align:left;
 		color:black;
 	}
-	tr{
-		border-bottom: 1px solid #ccc;
-		&:last-child{
-			border-bottom:2px solid black;
-			// td{
-			// 	padding-top:10px;
-			// 	padding-bottom:10px
-			// }
+
+	// Add class='align-right' to any cell for the content to text-align:right;
+	th, td{
+		&.align-right{
+			text-align:right;
 		}
 	}
-	
-	.align-right{
-		text-align:right;
-	}
 
-}
+	// *************	
+	// Now the elements specific to either the standard or compressed versions
+	// *************
 
-@mixin trib-table--compressed{
-		thead{
-			border-bottom: 1px solid black;
-		}
-		td, th{
-			@include sans-serif-text(14px, 1.4em);
-			
-			&:first-child{
-				padding-right:0;
-			}
-		}
-
-		th {
-			font-weight: bold;
-			border-right: none;
-			padding: 0 3px;
-			color: #000;
-		}
-
-		td{
-			padding: 3px;
-		}
-
-		tr{
-			border-bottom:none;
-			&:last-child {
-				border-bottom:none;
-				// td {
-				// 	padding-top: 7px;
-				// 	padding-bottom: 7px;
-				// }
-			}
+	@if $type == standard{
+		thead {
+			border-bottom: 2px solid black;
+			// padding-bottom: 5px;
 		}
 		
-		tbody tr {
-			line-height: 1em;
+		// Font styles
+		th {
+			@include sans-serif-text(16px, 1.4em, bold);
+		}
 
-			&:first-child td {
-				padding-top: 7px;
+		td {
+			@include sans-serif-text(16px, 1.4em);
+		}
+
+		td, th{
+			padding:7px 3px;
+		}
+
+		// Add the border to the bottom of the table and rules in between each row.
+		tr{
+			border-bottom: 1px solid #ccc;
+			&:last-child{
+				border-bottom:2px solid black;
 			}
 		}
 
+	} @else if $type == compressed {
+		thead {
+			border-bottom: 1px solid black;
+		}
 
+		// Font styles
+		th {
+			@include sans-serif-text(14px, 1.4em, bold);
+		}
+
+		td {
+			@include sans-serif-text(14px, 1.4em);
+		}
+		
+		td, th{
+			padding:4px 3px;
+		}
+
+
+		// No border between <tr>
+		tr{
+			border-bottom: none;
+			&:last-child{
+				border-bottom:none;
+			}
+		}
+	}
 }
+
+
 @mixin trib-table--zebra($color1:$trib_blue5, $color2:transparent){
 	td, th{
-		padding:7px
+		padding:7px;
+		&:first-child{padding-left:7px;}
+		&:last-child{padding-right:7px;}
 	}
 	tbody {
 		tr:nth-child(even){
@@ -123,7 +125,7 @@
 		display:block;
 		width:100%;
 
-		.align-right{
+		td.align-right, th.align-right{
 			text-align: left;
 		}
 

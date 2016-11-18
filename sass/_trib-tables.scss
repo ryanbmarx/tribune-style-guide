@@ -1,5 +1,5 @@
 .trib-table{
-	@include trib-table();
+	@include trib-table(standard);
 }
 
 .trib-table--zebra{
@@ -7,5 +7,5 @@
 }
 
 .trib-table--compressed{
-	@include trib-table--compressed();
+	@include trib-table(compressed);
 }
