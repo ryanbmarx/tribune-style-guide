@@ -4,83 +4,129 @@
 	border-collapse:collapse;
 
 	thead {
-		background-color:$trib_blue1;
+		// background-color:$trib_blue1;
+		background-color: transparent;
+		border-bottom: 2px solid black;
+		padding-bottom: 5px;
 	}
 
 	tbody{
-		tr{vertical-align:top
+		tr{
+			vertical-align:top
+
 			&:first-child td{
 				padding-top:12px
 			}
 		}
 	}
+
+	td, th{
+		@include sans-serif-text(16px, 1.4em);
+
+	}
+
 	td{
-		padding:7px;
+		padding:7px 3px;
+
+		&:first-child{
+			padding-left:0;
+		}
+
+		&:last-child{
+			padding-right:0;
+		}
 	}
 	th{
-		padding:10px;
-		border-right:1px solid #fff;
+		padding: 0 3px 3px 3px;
+		font-weight: bold;
 		text-align:left;
-		color:#fff;
+		color:black;
 	}
 	tr{
 		border-bottom: 1px solid #ccc;
 		&:last-child{
 			border-bottom:2px solid black;
-			td{
-				padding-top:10px;
-				padding-bottom:10px
-			}
+			// td{
+			// 	padding-top:10px;
+			// 	padding-bottom:10px
+			// }
 		}
+	}
+	
+	.align-right{
+		text-align:right;
 	}
 
 }
 
 @mixin trib-table--compressed{
-	@media all and (min-width:($breakpoint-mobile + 1)){
 		thead{
-			background-color: transparent;
-			border-bottom: 2px solid black;
-			padding-bottom: 5px;
+			border-bottom: 1px solid black;
 		}
-		tr:last-child td {
-			padding-top: 7px;
-			padding-bottom: 7px;
-		}
-		th {
-			border-right: none;
-			padding: 0px 6px 3px 6px;
-			color: #000;
-		}
-		tbody tr:first-child td {
-			padding-top: 7px;
-		}
-		tr {
-			line-height: 1em;
-		}
-
 		td, th{
+			@include sans-serif-text(14px, 1.4em);
+			
 			&:first-child{
 				padding-right:0;
 			}
 		}
-	}
+
+		th {
+			font-weight: bold;
+			border-right: none;
+			padding: 0 3px;
+			color: #000;
+		}
+
+		td{
+			padding: 3px;
+		}
+
+		tr{
+			border-bottom:none;
+			&:last-child {
+				border-bottom:none;
+				// td {
+				// 	padding-top: 7px;
+				// 	padding-bottom: 7px;
+				// }
+			}
+		}
+		
+		tbody tr {
+			line-height: 1em;
+
+			&:first-child td {
+				padding-top: 7px;
+			}
+		}
+
+
 }
-@mixin trib-table--zebra($color){
-	td{
-		padding:10px 7px
+@mixin trib-table--zebra($color1:$trib_blue5, $color2:transparent){
+	td, th{
+		padding:7px
 	}
 	tbody {
 		tr:nth-child(even){
-			background-color:$color;
+			background-color:$color1;
+		}	
+
+		tr:nth-child(odd){
+			background-color:$color2;
 		}	
 	}
 }
 
-@mixin trib-table--responsive{
-	@media all and (max-width:$breakpoint-mobile){
+@mixin trib-table--responsive($breakpoint){
+	@media all and (max-width:#{$breakpoint}){
 		display:block;
 		width:100%;
+
+		.align-right{
+			text-align: left;
+		}
+
 		&.dataTable,tfoot, thead{
 			display:none;
 			visibility:hidden;
@@ -94,17 +140,17 @@
 			text-align:left;
 			white-space:normal;
 			&[data-title]:before{
-				content:"\203A\00A0" attr(data-title) ":\00A0";
+				content:"\2022\00A0" attr(data-title) ":\00A0";
 				font-weight:700
 			}
 		}
 		td{
+			
 			&:empty{
 				display:none;
 			}
 			&:first-child{
-				font-size:16px;
-				font-weight:700;
+				@include sans-serif-text(18px, 1.4em, bold)
 				margin-bottom:6px;
 				color:#333;
 				&:before{content:''}

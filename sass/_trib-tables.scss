@@ -3,13 +3,9 @@
 }
 
 .trib-table--zebra{
-	@include trib-table--zebra($highlight-color);
+	@include trib-table--zebra($trib_blue5, transparent);
 }
 
 .trib-table--compressed{
 	@include trib-table--compressed();
-}
-
-.trib-table--responsive{
-	@include trib-table--responsive();
 }
