@@ -1,4 +1,13 @@
 $dot_dimension:11px;
+
+/*
+	dd, dt{
+	    line-height: 1.0em;
+	    margin-bottom: 3px;
+	}
+
+*/
+
 @mixin trib_legend--inline(){
 	// Include this for all the dt/dd pairs to be on a single, wrapping line
 
@@ -44,14 +53,15 @@ $dot_dimension:11px;
 
 
 @mixin trib_legend(){
-	// Base mixxin. Needed for all legends.
+	// Base mixin. Needed for all legends.
 	@include trib_legend--stacked();
 	@include clearfix();
 
-	margin: 0 0 25px 0;
+	margin: 5px 0 25px 0;
 
-	dd{
-		@include sans-serif-text(16px, 1.7em);
+	dt,dd{
+		@include sans-serif-text(16px, 1em);
+	    margin-bottom: 3px;
 	}
 
 }
