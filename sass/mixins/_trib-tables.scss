@@ -46,7 +46,33 @@
 	// Now the elements specific to either the standard or compressed versions
 	// *************
 
-	@if $type == standard{
+	@if $type == compressed {
+		thead {
+			border-bottom: 1px solid black;
+		}
+
+		// Font styles
+		th {
+			@include sans-serif-text(14px, 1.4em, bold);
+		}
+
+		td {
+			@include sans-serif-text(14px, 1.4em);
+		}
+		
+		td, th{
+			padding:4px 3px;
+		}
+
+
+		// No border between <tr>
+		tr{
+			border-bottom: none;
+			&:last-child{
+				border-bottom:none;
+			}
+		}
+	} @else {
 		thead {
 			border-bottom: 2px solid black;
 			// padding-bottom: 5px;
@@ -73,33 +99,7 @@
 			}
 		}
 
-	} @else if $type == compressed {
-		thead {
-			border-bottom: 1px solid black;
-		}
-
-		// Font styles
-		th {
-			@include sans-serif-text(14px, 1.4em, bold);
-		}
-
-		td {
-			@include sans-serif-text(14px, 1.4em);
-		}
-		
-		td, th{
-			padding:4px 3px;
-		}
-
-
-		// No border between <tr>
-		tr{
-			border-bottom: none;
-			&:last-child{
-				border-bottom:none;
-			}
-		}
-	}
+	} 
 }
 
 
