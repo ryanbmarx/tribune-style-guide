@@ -1,6 +1,6 @@
 {
   "name": "trib-styles",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Base style and css/sass utilities for the Chicago Tribune data team.",
   "main": "trib-dataviz-styles.scss",
   "repository": {
