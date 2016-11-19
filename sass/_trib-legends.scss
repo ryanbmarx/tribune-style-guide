@@ -2,12 +2,8 @@
 .trib-legend{
 	@include trib_legend();
 
-	&--stacked{
-		@include trib_legend--stacked();
-	}
-
 	&--inline{
-		@include trib_legend--inline();
+		@include trib_legend(inline);
 	}
 
 	&__line{

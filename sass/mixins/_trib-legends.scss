@@ -6,34 +6,72 @@ $dot_dimension:11px;
 	    margin-bottom: 3px;
 	}
 
-*/
+	*/
 
-@mixin trib_legend--inline(){
-	// Include this for all the dt/dd pairs to be on a single, wrapping line
+// @mixin trib_legend--inline(){
+// 	// Include this for all the dt/dd pairs to be on a single, wrapping line
 
-	dd, dt{
-		display: inline;
-		float:none;
+// 	dd, dt{
+// 		display: inline;
+// 		float:none;
+// 	}
+
+// 	dd{
+// 		margin-left:0;
+
+// 		&:after{
+// 			content:none;
+// 		}
+// 	}
+
+// 	dt{
+// 		margin-left:12px;
+
+// 		&:first-child{
+// 			margin-left:0;
+// 		}
+// 	}
+// }
+
+// @mixin trib_legend--stacked(){
+
+// }
+
+
+@mixin trib_legend($type:stacked){
+	// Base mixin. Needed for all legends.
+	// @include trib_legend--stacked();
+	@include clearfix();
+
+	margin: 5px 0 25px 0;
+
+	dt,dd{
+		@include sans-serif-text(16px, 1em);
+		margin-bottom: 3px;
 	}
 
-	dd{
-		margin-left:0;
-
-		&:after{
-			content:none;
+	@if $type == "inline"{
+		dd, dt{
+			display: inline;
+			float:none;
 		}
-	}
 
-	dt{
-		margin-left:12px;
-		
-		&:first-child{
+		dd{
 			margin-left:0;
-		}
-	}
-}
 
-@mixin trib_legend--stacked(){
+			&:after{
+				content:none;
+			}
+		}
+
+		dt{
+			margin-left:12px;
+			
+			&:first-child{
+				margin-left:0;
+			}
+		}
+		} @else {
 	// Include this for each dt/dd pair to be on it's own line
 	dt{
 		float:left;
@@ -51,19 +89,6 @@ $dot_dimension:11px;
 	}
 }
 
-
-@mixin trib_legend(){
-	// Base mixin. Needed for all legends.
-	@include trib_legend--stacked();
-	@include clearfix();
-
-	margin: 5px 0 25px 0;
-
-	dt,dd{
-		@include sans-serif-text(16px, 1em);
-	    margin-bottom: 3px;
-	}
-
 }
 
 
@@ -77,17 +102,17 @@ $dot_dimension:11px;
 
 	@if $shape == 'circle'{
 		$border_radius: 50%;
-	} @else if $shape == 'line'{
-		$dot_height:5px;
-		$border_radius: 3px;
-		$border:none;
-	} @else {
-		$border_radius: $shape;
-	}
+		} @else if $shape == 'line'{
+			$dot_height:5px;
+			$border_radius: 3px;
+			$border:none;
+			} @else {
+				$border_radius: $shape;
+			}
 
-	display:inline-block;
-	border-radius:$border_radius;
-	height: $dot_height;
-	width: $dot_width;
-	border:$border;
-}
+			display:inline-block;
+			border-radius:$border_radius;
+			height: $dot_height;
+			width: $dot_width;
+			border:$border;
+		}
