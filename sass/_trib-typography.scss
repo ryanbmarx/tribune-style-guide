@@ -13,51 +13,21 @@
 	.trib-chart .label#{$i}, 
 	.label#{$i}{
 		@if $i == 1{
-					@include label1;}
+					@include label1();}
 		@else if $i == 2{
-					@include label2;}
+					@include label2();}
 		@else if $i == 3{
-					@include label3;}
+					@include label3();}
 		@else if $i == 4{
-					@include label4;}
+					@include label4();}
 		@else if $i == 5{
-					@include label5;}
+					@include label5();}
 		@else if $i == 6{
-					@include label6;}
+					@include label6();}
 		@else if $i == 7{
-					@include label7;		}
+					@include label7();		}
 	}
 }
-	
-// .trib-image figcaption.label1, .label1{
-// 	@include label1();	
-// }
-
-// .trib-image figcaption.label2, .label2{
-// 	@include label2();
-// }
-
-// .trib-image figcaption.label3, .label3{
-// 	@include label3();
-// }
-
-// .trib-image figcaption.label4, .label4{
-// 	@include label4();
-// }
-// .trib-image figcaption.label5, .label5{
-// 	@include label5();
-// }
-
-// .trib-image figcaption.label6, .label6{
-// 	// This is the bold leadin style ... just two clicks larger than base <p> text
-// 	@include label6();
-// }
-
-// .trib-image figcaption.label7, .label7{
-// 	// This is the bold leadin style for sans-serif ... just two clicks larger than base sans text
-// 	@include label7();
-// }
-
 
 .trb_mainContent p, p{
 	// Serif text. Base style. Pretty close to NGUX
@@ -81,4 +51,8 @@
 .trb_mainContent ol, ol, .trb_mainContent ul, ul, .trb_mainContent dl, dl{
 	@include serif-text(18px, 27px);
 	margin-bottom:25px;
+}
+
+.trb_mainContent .big-number, .big-number{
+	// @include 
 }
