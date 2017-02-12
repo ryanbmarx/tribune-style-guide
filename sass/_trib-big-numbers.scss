@@ -1,0 +1,8 @@
+.trb_mainContent .trib-big-number, .trib-big-number{
+	@include trib-big-number();
+}
+
+
+.trb_mainContent .trib-big-number--side, .trib-big-number--side{
+	@include trib-big-number(side);
+}
